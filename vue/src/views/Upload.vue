@@ -58,8 +58,8 @@
           </v-row>
         </v-container>
       </tab-content>
-      <tab-content title="Mood Meter">
-        Mood Meter
+      <tab-content title="How do you feel?">
+        Tell us about how you are feeling right now...
         <v-container fluid>
           <v-subheader>Energy Level</v-subheader>
           <v-slider
@@ -211,13 +211,13 @@
         </div>
         <div>Energy, Pleasantness (axes)</div>
       </tab-content>
-      <tab-content title="Upload Bill">
+      <tab-content title="Upload Docs">
         <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></vue-dropzone>
         <button @click="removeAllFiles">Remove All Files</button>
-      </tab-content>
-      <tab-content title="Capture Bill">
         <VueCamera />
       </tab-content>
+      <!-- <tab-content title="Capture Bill">
+      </tab-content>-->
     </form-wizard>
   </div>
 </template>

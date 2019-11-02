@@ -1,20 +1,19 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <div id="nav">
-      <img class="logo" src="./assets/placeholder_logo.jpg" alt="">
+      <img class="logo" src="./assets/placeholder_logo.jpg" alt />
       <div class="links">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link> |
+        <router-link to="/">Home</router-link>|
+        <router-link to="/about">About</router-link>|
         <router-link to="/upload">Upload</router-link>
       </div>
     </div>
-    <router-view/>
-  </div>
+    <router-view />
+  </v-app>
 </template>
 
 <style lang="scss">
-
-:root{
+:root {
   --orange: #ffc776;
   --dark-green: #005450;
   --green: #068466;
@@ -25,12 +24,12 @@
   --light-grey: #f4f4f4;
 }
 
-body{
+body {
   margin: 0;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -40,10 +39,10 @@ body{
 #nav {
   padding: 30px;
   display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-around;
 
-  .logo{
+  .logo {
     width: 10rem;
   }
 

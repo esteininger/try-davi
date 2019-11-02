@@ -3,6 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import VueCamera from "@mrjeffapp/vuejs-camera";
 import Chat from "vue-beautiful-chat";
+import Vuetify from "vuetify";
+import "vuetify/dist/vuetify.min.css";
 import vuetify from "@/plugins/vuetify"; // path to vuetify export
 
 // import 'vue2-dropzone/dist/vue2Dropzone.css'
@@ -15,5 +17,6 @@ new Vue({
   render: h => h(App)
 }).$mount("#app");
 
+Vue.use(Vuetify);
 Vue.use(VueCamera);
 Vue.use(Chat);

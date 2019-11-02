@@ -2,8 +2,69 @@
   <div id="upload">
     <h1>Upload</h1>
     <form-wizard>
-      <tab-content title="Personal details">My first tab content</tab-content>
-      <tab-content title="Additional Info">My second tab content</tab-content>
+      <tab-content title="Personal details">
+        <v-form v-model="valid">
+          <v-container>
+            <v-row>
+              <v-col cols="12" md="4">
+                <v-text-field
+                  v-model="firstname"
+                  :rules="nameRules"
+                  :counter="10"
+                  label="First name"
+                  required
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="4">
+                <v-text-field
+                  v-model="lastname"
+                  :rules="nameRules"
+                  :counter="10"
+                  label="Last name"
+                  required
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="4">
+                <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-form>
+      </tab-content>
+      <tab-content title="Journey Info">
+        <v-container fluid>
+          <v-row align="center">
+            <h3>I am</h3>
+            <v-col class="d-flex" cols="12" sm="6">
+              <v-select :items="items" label="Standard"></v-select>
+            </v-col>
+            <h3>insured</h3>
+          </v-row>
+          <v-row>
+            <h3>with</h3>
+            <v-col class="d-flex" cols="12" sm="6">
+              <v-select :items="items" label="Standard"></v-select>
+            </v-col>
+            <h3>savings</h3>
+          </v-row>
+          <v-row>
+            <h3>billing</h3>
+            <v-col class="d-flex" cols="12" sm="6">
+              <v-select :items="items" label="Standard"></v-select>
+            </v-col>
+            <h3>pre post</h3>
+          </v-row>
+          <v-row>
+            <h3>In a range of</h3>
+            <v-col class="d-flex" cols="12" sm="6">
+              <v-select :items="items" label="Standard"></v-select>
+            </v-col>
+            <h3>much</h3>
+          </v-row>
+        </v-container>
+      </tab-content>
       <tab-content title="Last step">Yuhuuu! This seems pretty damn simple</tab-content>
       <tab-content title="Last step">
         <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></vue-dropzone>
@@ -45,7 +106,8 @@ export default {
         // thumbnailWidth: 150, // px
         // thumbnailHeight: 150,
         // addRemoveLinks: true
-      }
+      },
+      items: ["andrew", "kim"]
     };
   },
   methods: {

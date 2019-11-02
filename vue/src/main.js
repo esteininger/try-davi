@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import VueCamera from '@mrjeffapp/vuejs-camera'
-
+import Chat from 'vue-beautiful-chat'
 
 // import 'vue2-dropzone/dist/vue2Dropzone.css'
 
@@ -14,3 +14,4 @@ new Vue({
 }).$mount('#app')
 
 Vue.use(VueCamera);
+Vue.use(Chat)

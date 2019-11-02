@@ -1,17 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>Flask + Vue CRUD</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but client doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
-</html>
+{% include "fixed/header.html" %}
+
+
+    <div class="section widget-geomap container container-palette">
+        <div class="container">
+            <div class="geomap-title"> <span class="mark-c">Oravise</span> simplifies your healthcare navigation.</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="local-form">
+                        <form action="#">
+                            <div class="form-group form-group-btns">
+                                <a href='/start' style="width: 25%;" class="btn btn-custom btn-custom-secondary btn-wide">Get Started</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="slim-sections">
+        <section class="section container container-palette">
+            <div class="container">
+                <div class="section-title slim">
+                    <h2 class="title">Where are you in your journey?</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <figure class="card card-preview"> <img src="../static/img/pic/places/trend.jpg" alt="" /> <a href="#" class="link"></a>
+                            <figcaption class="description">
+                                <h2>About to Visit Doctor</h2>
+                                <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <figure class="card card-preview"> <img src="../static/img/pic/places/co.jpg" alt="" /> <a href="#" class="link"></a>
+                            <figcaption class="description">
+                                <h2>Received a Diagnosis</h2>
+                                <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <figure class="card card-preview"> <img src="../static/img/pic/places/arts.jpg" alt="" /> <a href="#" class="link"></a>
+                            <figcaption class="description">
+                                <h2>Received a Medical Bill</h2>
+                                <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- /. section preview category -->
+        <section class="section container container-palette">
+            <div class="container">
+                <div class="section-title slim">
+                    <h2 class="title">How it Works</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="thumbnail thumbnail-type">
+                            <div class="thumbnail-image"><a href="#" class="img-circle-cat"><img src="../static/img/icon/icon-phone.png" alt="" /></a></div>
+                            <div class="caption">
+                                <h3 class="title"><a href="#">Chose Type</a></h3>
+                                <div class="description">Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sedodio sit amma.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail thumbnail-type">
+                            <div class="thumbnail-image"><a href="#" class="img-circle-cat"><img src="../static/img/icon/icon-star.png" alt="" /></a></div>
+                            <div class="caption">
+                                <h3 class="title"><a href="#">Find Location</a></h3>
+                                <div class="description">Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sedodio sit amma.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail thumbnail-type">
+                            <div class="thumbnail-image"><a href="#" class="img-circle-cat"><img src="../static/img/icon/icon-train.png" alt="" /></a></div>
+                            <div class="caption">
+                                <h3 class="title"><a href="#">Review Listing</a></h3>
+                                <div class="description">Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sedodio sit amma.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail thumbnail-type">
+                            <div class="thumbnail-image"><a href="#" class="img-circle-cat"><img src="../static/img/icon/icon-trumpet.png" alt="" /></a></div>
+                            <div class="caption">
+                                <h3 class="title"><a href="#">Visit More</a></h3>
+                                <div class="description">Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sedodio sit amma.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- /. How it Works -->
+    </main>
+
+{% include "fixed/footer.html" %}

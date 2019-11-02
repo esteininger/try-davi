@@ -7,6 +7,11 @@ import base64
 import os
 
 
+def allowed_file(filename):
+    ALLOWED_EXTENSIONS = ['jpeg', 'jpg', 'png', 'gif']
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
 def save_file(file_obj, filename):
     full_filename = os.path.join(app_config['UPLOAD_FOLDER'], filename)
     file_obj.save(full_filename)

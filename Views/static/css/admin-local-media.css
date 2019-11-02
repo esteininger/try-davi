@@ -1,0 +1,245 @@
+@charset 'UTF-8';
+
+/*------------------------------------------------------------------
+[Media Stylesheet]
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Min width 992px and Max width: 1199px
+2. Max width: 1140px 
+3. Max width: 992px
+4. Max width: 992px and min width: 768px
+5. Max width: 767px
+6. Max width: 480px
+7. Custom media for IE
+
+-------------------------------------------------------------------*/
+
+@media (min-width: 1140px) and (max-width: 1350px) {
+
+}
+
+@media (max-width: 1199px) {
+
+    .nopadding-md {
+        padding: 0 !important;
+    }
+
+    .nomargin-md {
+        margin: 0 !important;
+    }
+}
+
+
+/*------------------------------------------------------------------
+[1. Min width 992px and Max width: 1199px ]
+*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/*------------------------------------------------------------------
+[2. Max width: 1140px ]
+*/
+@media (max-width: 1140px) {
+    
+}
+
+/*------------------------------------------------------------------
+[1. Min width 992px and Max width: 1199px ]
+*/
+
+@media (min-width: 992px) and (max-width: 1139px) {
+
+}
+
+
+/*------------------------------------------------------------------
+[3. Max width: 991px ]
+*/
+@media (max-width: 991px) {
+    .nopadding-sm {
+        padding: 0 !important;
+    }
+
+    .nomargin-sm {
+        margin: 0 !important;
+    }
+    
+    .navbar-toggle {
+        display: block;
+    }
+
+    body {
+        padding-left: 50px;
+    }
+    
+    .page-wrapper .sidebar {
+        width: 50px;
+        min-width: 50px;
+        z-index: 9999;
+        -webkit-transition: all .15s ease;
+        transition: all .15s ease;
+    }
+    
+    .nav-side a {
+        padding: 0;
+    }
+    
+    .nav-side a .nav-icon {
+        padding: 17px 18px;
+    }
+    
+    .sidebar {
+       overflow: hidden;
+    }
+    
+    .logo .link,
+    .sidebar .copyright {
+       display: none;
+    }
+    
+    .page-wrapper .sidebar {
+        position: fixed;
+        min-height: 100vh;
+        left: 0;
+    }
+    
+    .logo .link-mobile {
+        display: block;
+    }
+    
+    .sidebar .bar-head {
+        padding: 0;
+        text-align: center;
+        /*justify-content: center;*/
+        padding-left: 15px;
+    }
+    
+    .sidebar .nav-side li li a {
+        padding-left: 0;
+    }
+    
+    .mainbar .mainbar-body {
+        padding: 20px 35px;
+    }
+    
+    .sidebar-open .page-wrapper .sidebar {
+        width: 250px;
+    }
+    
+    .table-listings .location-cell i {
+        display: none;
+    }
+    
+    .table-listings>tbody>tr>td[style^="display: table-cell"] {
+        position: relative;
+        padding-left: 40px;
+    }
+    
+    .table-listings>tbody>tr>td[style^="display: table-cell"]>span.footable-toggle,
+    .table-listings>tbody>tr>td.preview-mobile>span.footable-toggle {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        margin-top: -7px;
+    }
+}
+
+/*------------------------------------------------------------------
+[4. Max width: 992px and min width: 768px]
+*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/*------------------------------------------------------------------
+[5. Max width: 767px]
+*/
+@media (max-width: 767px) {
+    .nopadding-xs {
+        padding: 0 !important;
+    }
+
+    .nomargin-xs {
+        margin: 0 !important;
+    }
+    
+    .profile-editor .profile-editor-side {
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+    
+    .profile-editor .profile-editor-main {
+        margin-left: 0;
+        padding-left: 0;
+        padding-top: 12px;
+    }
+    
+    .table-panel tr td {
+        padding-right: 20px;
+    }
+    
+    .btn {
+        white-space: normal;
+    }
+    
+    .sidebar .widget.left-menu {
+        overflow-y: scroll;
+        height: 100;
+        max-height: calc( 100vh - 106px);
+        overflow-x: hidden;
+        width: 70px;
+    }
+    
+    .sidebar .widget.left-menu {
+        overflow-y: scroll;
+        height: 100;
+        max-height: calc( 100vh - 106px);
+        overflow-x: hidden;
+        width: calc(100% + 20px);
+    }
+    
+}
+
+/*------------------------------------------------------------------
+[6. Max width: 540px]
+*/
+
+@media (max-width:540px) {
+    
+    .bar-head .profile-card {
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    
+    .bar-head .btn.btn-transparent {
+        margin: 0;
+    }
+    
+    .page-wrapper .mainbar .bar-head {
+        padding: 10px 35px;
+        height: initial;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}
+
+/*------------------------------------------------------------------
+[7. Custom media for IE]
+*/
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+}
+
+@media screen and (max-width:1140px) and (-ms-high-contrast: active) and (-ms-high-contrast: none) {
+}
+
+@media screen and (max-width:768px) and (-ms-high-contrast: active) and (-ms-high-contrast: none) {
+}

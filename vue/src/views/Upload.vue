@@ -228,6 +228,7 @@ import "vue2-dropzone/dist/vue2Dropzone.min.css";
 import VueCamera from "@mrjeffapp/vuejs-camera";
 import { FormWizard, TabContent } from "vue-form-wizard";
 import "vue-form-wizard/dist/vue-form-wizard.min.css";
+import axios from "axios";
 
 export default {
   name: "upload",
@@ -268,6 +269,14 @@ export default {
       lastname: "Last Name",
       firstname: "First Name",
       email: "Email",
+      nameRules: [
+        v => !!v || "Name is required",
+        v => v.length <= 10 || "Name must be less than 10 characters"
+      ],
+      emailRules: [
+        v => !!v || "E-mail is required",
+        v => /.+@.+/.test(v) || "E-mail must be valid"
+      ],
       billing: "",
       carrier: "",
       plan: "",
@@ -296,8 +305,8 @@ export default {
       ],
       options_billing: ["Pre", "Post"],
       options_plan: ["PPO", "HMO"],
-      label_energy: ["Low", "", "", "", "", "", "", "", "", "", "High"],
-      label_pleasantness: [
+      labels_energy: ["Low", "", "", "", "", "", "", "", "", "", "High"],
+      labels_pleasantness: [
         "Unpleasant",
         "",
         "",
@@ -314,9 +323,31 @@ export default {
       pleasant_level: 5
     };
   },
+  created: function() {
+    this.getAxios();
+  },
   methods: {
     removeAllFiles() {
       this.$refs.myVueDropzone.removeAllFiles();
+    },
+    getAxios() {
+      axios
+        .get("https://api.coindesk.com/v1/bpi/currentprice.json", {
+          params: {
+            ID: 12345
+          }
+        })
+        .then(function(response) {
+          return response;
+          // console.log(response);
+        })
+        .catch(function(error) {
+          return error;
+          // console.log(error);
+        })
+        .finally(function() {
+          // always executed
+        });
     }
   }
 };

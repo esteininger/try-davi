@@ -9,7 +9,7 @@ class Files(db.Document):
 
 
 class Patients(db.Document):
-    uuid = db.StringField(required=True)
+    id = db.StringField(required=True)
     name = db.StringField(required=True)
     files = db.EmbeddedDocumentField(Files)
 

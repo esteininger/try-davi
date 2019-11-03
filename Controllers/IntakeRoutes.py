@@ -46,8 +46,7 @@ def upload_intake_api():
 
         try:
             cloud_file_path = Drive().upload(filename=user_email, file_path=file_path, folder_id=folder_id, share=True)
-            Patients.update(id=user_email)
-            Patients.objects(id=patient_id).update(set__files=comment)
+            Patients.objects(id=patient_id).update(set__files_bill=cloud_file_path)
             f.delete()
             return success_response(cloud_file_path)
         except Exception as e:

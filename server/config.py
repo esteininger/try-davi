@@ -6,12 +6,12 @@ app_config = {
 }
 
 mongo_config = {
-    'IP': '142.93.180.200',
-    'PORT': 27017,
-    'USERNAME': 'adminMain',
-    'PASSWORD': 'GsGs4Whn3L5Ye7RFtDXZQ5mikdQRB3bzWHjBtaXjSE',
-    'DB': 'bcg_dv_hacks_oravise',
-    'AUTH': 'admin'
+    'IP': '',
+    'PORT': "",
+    'USERNAME': '',
+    'PASSWORD': '',
+    'DB': '',
+    'AUTH': ''
 }
 
 

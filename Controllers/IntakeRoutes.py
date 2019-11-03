@@ -32,7 +32,6 @@ def patient_intake_api():
 def upload_intake_api():
     if request.method == 'POST':
         patient_id = request.args.get('id', default=None, type=str)
-        state = request.args.get('state', default=None, type=str)
 
         file = request.files['file'].read()
 

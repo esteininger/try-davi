@@ -7,6 +7,6 @@ class Advocates(db.Document):
     last_name = db.StringField(required=True)
     location = db.StringField(required=True)
     email = db.StringField(required=True)
-    phone_number = db.StringField(required=True)
+    phone = db.StringField(required=True)
 
     meta = {'collection': 'advocates', 'strict': False}

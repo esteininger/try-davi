@@ -1,7 +1,7 @@
 # import datetime
 from Utilities.Database import db
 
-
+ 
 class Advocates(db.Document):
     first_name = db.StringField(required=True)
     last_name = db.StringField(required=True)

@@ -3,14 +3,14 @@ from Utilities.Database import db
 import uuid
 
 
-class Files(db.Document):
-    eob = db.StringField(required=True)
-    bill = db.StringField(required=True)
+class Files(db.EmbeddedDocument):
+    eob = db.StringField()
+    bill = db.StringField()
 
 
 class Patients(db.Document):
-    id = db.StringField(required=True)
-    name = db.StringField(required=True)
+    id = db.StringField()
+    name = db.StringField()
     files = db.EmbeddedDocumentField(Files)
 
     meta = {'collection': 'patients', 'strict': False}

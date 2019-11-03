@@ -11,11 +11,8 @@ mod = Blueprint('intake_routes', __name__)
 
 @mod.route("/api/intake/create-uuid", methods=['POST'])
 def create_uuid_api():
-    try:
-        uuid = Patients().create()
-        return success_response(uuid)
-    except Exception as e:
-        return error_response(e)
+    uuid = Patients().create()
+    return success_response(uuid)
 
 
 @mod.route("/api/intake/patient", methods=['POST'])

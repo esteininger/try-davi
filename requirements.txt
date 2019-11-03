@@ -5,3 +5,4 @@ protobuf==3.10.0
 google_auth_oauthlib==0.4.1
 google_api_python_client==1.7.11
 Unidecode==1.1.1
+gunicorn

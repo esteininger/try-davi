@@ -1,35 +1,43 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import About from "../views/About.vue";
+import Upload from "../views/Upload.vue";
+import Matching from "../views/Matching.vue";
+import Complete from "../views/Complete.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: "/",
+    name: "home",
     component: Home
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: "/about",
+    name: "about",
+    component: About
   },
   {
-    path: '/upload',
-    name: 'upload',
-    // route level code-splitting
-    // this generates a separate chunk (upload.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "upload" */ '../views/Upload.vue')
+    path: "/upload",
+    name: "upload",
+    component: Upload
+  },
+  {
+    path: "/matching",
+    name: "matching",
+    component: Matching
+  },
+  {
+    path: "/complete",
+    name: "complete",
+    component: Complete
   }
-]
+];
 
 const router = new VueRouter({
   routes
-})
+});
 
-export default router
+export default router;

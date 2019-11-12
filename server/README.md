@@ -1,11 +1,17 @@
 # Flask MVC Boilerplate
-This is an application that uses machine learning technologies to connect patients via their medical bill and EOB images to appropriate patient advocates. 
+This is a Flask MVC boilerplate that includes:
+
+  - Login required decorator /w redirect
+  - SQLAlchemy & MongoDB ready
+  - Models, Views, Controllers (Routes) structured via blueprints
+  - Route method (success vs error) handling
+  - Mailer class
+  - Configuration file
+  - JWT-Extended integration
 
 ### Installation
 
-This app has a backend and a frontend.
-
-The backend is Flask, which requires Python 3+ to run, so install that first
+This app requires Python 3+ to run, so install that first
 
 1. Install the dependencies:
 
@@ -13,10 +19,10 @@ The backend is Flask, which requires Python 3+ to run, so install that first
 pip install -r requirements.txt
 ```
 
-2. Run:
+2. Add your corresponding keys and environment variables in config.py
+
+3. Run:
 
 ```python
-python run.py
+python manage.py run
 ```
-
-The frontent

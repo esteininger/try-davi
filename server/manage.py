@@ -1,6 +1,6 @@
 from flask import Flask
 from config import session_key, app_config, mongo_config
-from Controllers import PageRoutes, ErrorRoutes, IntakeRoutes, AdvocateRoutes
+from Controllers import PageRoutes, ErrorRoutes, FileRoutes
 from Utilities.Database import db
 
 
@@ -16,8 +16,7 @@ app.template_folder = app_config['ROOT_PATH'].split('Controllers')[0] + '/Views/
 blueprints = [
     PageRoutes.mod,
     ErrorRoutes.mod,
-    IntakeRoutes.mod,
-    AdvocateRoutes.mod
+    FileRoutes.mod
 ]
 for bp in blueprints:
     app.register_blueprint(bp)
@@ -33,5 +32,6 @@ app.config['MONGODB_SETTINGS'] = {
 }
 db.init_app(app)
 
+
 if __name__ == '__main__':
-    app.run(host="localhost", port=5009, debug=True)
+    app.run(host="localhost", port=5010, debug=True)

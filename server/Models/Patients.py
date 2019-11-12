@@ -8,14 +8,26 @@ class Files(db.EmbeddedDocument):
     bill = db.StringField()
 
 
-class Patients(db.Document):
-    id = db.StringField()
+class Patient(db.Document):
+    uuid = db.StringField(required=True)
     name = db.StringField()
     files = db.EmbeddedDocumentField(Files)
 
     meta = {'collection': 'patients', 'strict': False}
 
-    def create(self):
-        self.uuid = str(uuid.uuid4())
-        self.save()
-        return self.uuid
+    @staticmethod
+    def create_new():
+        id = str(uuid.uuid4())
+        Patient(uuid=id).save()
+        return id
+
+    def add_file(**obj):
+        # if Patient.objects(uuid=self.uuid):
+        try:
+            Patient._get_collection().update_one(
+                {'uuid': obj.get('uuid')},
+                {"$set": {f"files.{obj.get('type')}": obj.get('url')}}
+            )
+            return True
+        except:
+            return False

@@ -1,9 +1,9 @@
 Flask==0.12.2
 pycrypto==2.6.1
+flask_jwt_extended==3.24.1
 flask_mongoengine==0.9.5
 protobuf==3.10.0
 google_auth_oauthlib==0.4.1
 google_api_python_client==1.7.11
+python_magic==0.4.15
 Unidecode==1.1.1
-gunicorn
-python-magic==0.4.15

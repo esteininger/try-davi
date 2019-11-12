@@ -9,6 +9,7 @@ def success_response(data, code=200):
         "code": code,
         "endpoint": request.path,
         "timestamp": time(),
+        "count": len(data),
         "response": data
     })
 

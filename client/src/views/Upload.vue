@@ -4,7 +4,7 @@
     <form-wizard color="#a56ff2" @on-complete="onComplete">
       <h2 slot="title"></h2>
       <tab-content title="Personal details">
-        <v-form v-model="valid">
+        <v-form>
           <v-container>
             <v-row>
               <v-col cols="12" md="4">
@@ -28,7 +28,12 @@
               </v-col>
 
               <v-col cols="12" md="4">
-                <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+                <v-text-field
+                  v-model="email"
+                  :rules="emailRules"
+                  label="E-mail"
+                  required
+                ></v-text-field>
               </v-col>
             </v-row>
           </v-container>
@@ -39,25 +44,41 @@
           <v-row>
             <h3>My billing status</h3>
             <v-col class="d-flex" cols="12" sm="6">
-              <v-select v-model="billing" :items="options_billing" label="Billing"></v-select>
+              <v-select
+                v-model="billing"
+                :items="options_billing"
+                label="Billing"
+              ></v-select>
             </v-col>
           </v-row>
           <v-row align="center">
             <h3>My insurance is provided by</h3>
             <v-col class="d-flex" cols="12" sm="6">
-              <v-select v-model="carrier" :items="options_carrier" label="Carrier"></v-select>
+              <v-select
+                v-model="carrier"
+                :items="options_carrier"
+                label="Carrier"
+              ></v-select>
             </v-col>
           </v-row>
           <v-row align="center">
             <h3>and the type of plan is</h3>
             <v-col class="d-flex" cols="12" sm="6">
-              <v-select v-model="plan" :items="options_plan" label="Plan"></v-select>
+              <v-select
+                v-model="plan"
+                :items="options_plan"
+                label="Plan"
+              ></v-select>
             </v-col>
           </v-row>
           <v-row>
             <h3>With an income of</h3>
             <v-col class="d-flex" cols="12" sm="6">
-              <v-select v-model="income" :items="options_income" label="Income"></v-select>
+              <v-select
+                v-model="income"
+                :items="options_income"
+                label="Income"
+              ></v-select>
             </v-col>
           </v-row>
         </v-container>
@@ -77,15 +98,30 @@
           ></v-slider>
         </v-container>
       </tab-content>
-      <tab-content v-if="billing === 'Yes, I have received my bill.'" title="Upload Docs">
+      <tab-content
+        v-if="billing === 'Yes, I have received my bill.'"
+        title="Upload Docs"
+      >
         <h1>Upload your EOB document here</h1>
         <br />
-        <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></vue-dropzone>
+        <vue-dropzone
+          v-on:vdropzone-success="uploadBill"
+          ref="myVueDropzone"
+          id="dropzone"
+          :options="dropzoneOptions"
+        ></vue-dropzone>
         <h1>Upload your Medical Bill here</h1>
         <br />
-        <vue-dropzone ref="myVueDropzone2" id="dropzone2" :options="dropzone2Options"></vue-dropzone>
+        <vue-dropzone
+          v-on:vdropzone-success="uploadEOB"
+          ref="myVueDropzone2"
+          id="dropzone2"
+          :options="dropzone2Options"
+        ></vue-dropzone>
         <br />
-        <v-btn @click="removeAllFiles" large color="primary">Remove All Files</v-btn>
+        <v-btn @click="removeAllFiles" large color="primary"
+          >Remove All Files</v-btn
+        >
         <br />
         <br />
         <VueCamera />
@@ -202,19 +238,6 @@ export default {
         "Amerigroup - Medicare"
       ],
       labels_energy: ["Low", "", "", "", "", "", "", "", "", "", "High"],
-      labels_pleasantness: [
-        "Unpleasant",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "Pleasant"
-      ],
       energy_level: 5,
       pleasant_level: 5
     };
@@ -230,20 +253,36 @@ export default {
       this.$refs.myVueDropzone.removeAllFiles();
       this.$refs.myVueDropzone2.removeAllFiles();
     },
+    getAcceptedFiles() {
+      this.$refs.myVueDropzone.getAcceptedFiles();
+      this.$refs.myVueDropzone2.getAcceptedFiles();
+    },
+    uploadBill(file, response) {
+      console.log(file, response);
+    },
+    uploadEOB(file, response) {
+      console.log(file, response);
+    },
     getAxios() {
       axios
-        .get("https://api.coindesk.com/v1/bpi/currentprice.json", {
+        .post("http://localhost:5010/api/drive/upload/eob", {
           params: {
-            ID: 12345
-          }
+            // ID: 12345
+          },
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json",
+            "Access-Control-Allow-Origin": "http://localhost:8082"
+          },
+          crossDomain: true
         })
         .then(function(response) {
+          console.log(response);
           return response;
-          // console.log(response);
         })
         .catch(function(error) {
+          console.log(error);
           return error;
-          // console.log(error);
         })
         .finally(function() {
           // always executed

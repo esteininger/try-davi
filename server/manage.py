@@ -2,9 +2,11 @@ from flask import Flask
 from config import session_key, app_config, mongo_config
 from Controllers import PageRoutes, ErrorRoutes, FileRoutes
 from Utilities.Database import db
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
 # app settings
 app.secret_key = session_key

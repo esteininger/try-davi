@@ -1,11 +1,10 @@
 <template>
   <div id="upload">
-    <h1>Getting started with Davi</h1>
-    <form-wizard color="#a56ff2" @on-complete="onComplete">
+    <form-wizard color="#187777" @on-complete="onComplete">
       <h2 slot="title"></h2>
       <tab-content title="Personal details">
         <v-form>
-          <v-container>
+          <v-container class="mt-12 mb-12">
             <v-row>
               <v-col cols="12" md="4">
                 <v-text-field
@@ -41,7 +40,7 @@
       </tab-content>
       <tab-content title="Journey Info">
         <v-container fluid>
-          <v-row>
+          <v-row align="center">
             <h3>My billing status</h3>
             <v-col class="d-flex" cols="12" sm="6">
               <v-select
@@ -71,7 +70,7 @@
               ></v-select>
             </v-col>
           </v-row>
-          <v-row>
+          <v-row align="center">
             <h3>With an income of</h3>
             <v-col class="d-flex" cols="12" sm="6">
               <v-select
@@ -84,9 +83,11 @@
         </v-container>
       </tab-content>
       <tab-content title="How do you feel?">
-        <h1>Tell us how you feel about your healthcare financial standing?</h1>
-        <v-container fluid>
-          <v-subheader>Confidence Level</v-subheader>
+        <h1 class="mb-12">
+          How confident are you about your healthcare financial standing?
+        </h1>
+
+        <v-container fluid class="mb-12">
           <v-slider
             v-model="energy_level"
             :tick-labels="labels_energy"

@@ -105,7 +105,7 @@
         <h1>Upload your EOB document here</h1>
         <br />
         <vue-dropzone
-          v-on:vdropzone-success="uploadBill"
+          v-on:vdropzone-success="setEOB"
           ref="myVueDropzone"
           id="dropzone"
           :options="dropzoneOptions"
@@ -113,7 +113,7 @@
         <h1>Upload your Medical Bill here</h1>
         <br />
         <vue-dropzone
-          v-on:vdropzone-success="uploadEOB"
+          v-on:vdropzone-success="setBill"
           ref="myVueDropzone2"
           id="dropzone2"
           :options="dropzone2Options"
@@ -122,6 +122,8 @@
         <v-btn @click="removeAllFiles" large color="primary"
           >Remove All Files</v-btn
         >
+        <v-btn @click="uploadEOB" large color="primary">Upload EOB</v-btn>
+        <v-btn @click="uploadBill" large color="primary">Upload BILL</v-btn>
         <br />
         <br />
         <VueCamera />
@@ -148,6 +150,8 @@ export default {
   },
   data: function() {
     return {
+      bill: null,
+      eob: null,
       dropzoneOptions: {
         url: "https://httpbin.org/post",
         thumbnailWidth: 150,
@@ -243,7 +247,7 @@ export default {
     };
   },
   created: function() {
-    this.getAxios();
+    // this.postAxios();
   },
   methods: {
     onComplete: function() {
@@ -257,24 +261,43 @@ export default {
       this.$refs.myVueDropzone.getAcceptedFiles();
       this.$refs.myVueDropzone2.getAcceptedFiles();
     },
-    uploadBill(file, response) {
+    setBill(file, response) {
+      this.bill = file;
       console.log(file, response);
     },
-    uploadEOB(file, response) {
+    setEOB(file, response) {
+      this.eob = file;
       console.log(file, response);
     },
-    getAxios() {
+    uploadEOB() {
+      var form = new FormData();
+      form.append("file", this.eob);
       axios
-        .post("http://localhost:5010/api/drive/upload/eob", {
-          params: {
-            // ID: 12345
-          },
+        .post("https://trydavi.com/api/drive/upload/eob", form, {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            Accept: "application/json",
-            "Access-Control-Allow-Origin": "http://localhost:8082"
-          },
-          crossDomain: true
+            "Content-Type": "multipart/form-data"
+          }
+        })
+        .then(function(response) {
+          console.log(response);
+          return response;
+        })
+        .catch(function(error) {
+          console.log(error);
+          return error;
+        })
+        .finally(function() {
+          // always executed
+        });
+    },
+    uploadBill() {
+      var form = new FormData();
+      form.append("file", this.bill);
+      axios
+        .post("https://trydavi.com/api/drive/upload/bill", form, {
+          headers: {
+            "Content-Type": "multipart/form-data"
+          }
         })
         .then(function(response) {
           console.log(response);

@@ -243,7 +243,15 @@ export default {
       ],
       labels_energy: ["Low", "", "", "", "", "", "", "", "", "", "High"],
       energy_level: 5,
-      pleasant_level: 5
+      pleasant_level: 5,
+      axiosConfig: {
+        headers: {
+          "cache-control": "no-cache",
+          "Content-Type": "multipart/form-data"
+        },
+        crossDomain: true,
+        processData: false
+      }
     };
   },
   created: function() {
@@ -272,12 +280,13 @@ export default {
     uploadEOB() {
       var form = new FormData();
       form.append("file", this.eob);
+
       axios
-        .post("https://trydavi.com/api/drive/upload/eob", form, {
-          headers: {
-            "Content-Type": "multipart/form-data"
-          }
-        })
+        .post(
+          "https://trydavi.com/api/drive/upload/eob",
+          form,
+          this.axiosConfig
+        )
         .then(function(response) {
           console.log(response);
           return response;
@@ -294,11 +303,11 @@ export default {
       var form = new FormData();
       form.append("file", this.bill);
       axios
-        .post("https://trydavi.com/api/drive/upload/bill", form, {
-          headers: {
-            "Content-Type": "multipart/form-data"
-          }
-        })
+        .post(
+          "https://trydavi.com/api/drive/upload/bill",
+          form,
+          this.axiosConfig
+        )
         .then(function(response) {
           console.log(response);
           return response;

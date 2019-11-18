@@ -12,13 +12,7 @@
               /></router-link>
             </div>
           </div>
-          <div class="col-sm-8 col-lg-3 col-xl-3 d-none d-sm-block order-lg-3">
-            <div class="header-btns">
-              <div class="btn-2">
-                <router-link to="/upload">Get Started</router-link>
-              </div>
-            </div>
-          </div>
+
           <!-- Menu Block -->
           <div
             class="col-sm-1 col-6 col-lg-7 col-xl-6 offset-xl-1 position-static order-lg-2"
@@ -36,6 +30,14 @@
             </div>
             <div class="mobile-menu"></div>
           </div>
+
+          <!-- <div class="col-sm-8 col-lg-3 col-xl-3 d-none d-sm-block order-lg-3">
+            <div class="header-btns">
+              <div class="btn-2">
+                <router-link to="/upload">Get Started</router-link>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
     </header>
@@ -119,7 +121,7 @@ body {
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Karla", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -145,6 +147,8 @@ body {
     }
   }
 }
+
+//overrides
 
 .vue-form-wizard .wizard-card-footer {
   width: 50% !important;

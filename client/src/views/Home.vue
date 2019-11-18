@@ -17,6 +17,10 @@
                 Davi assigns you a medical billing expert to reduce your owed
                 medical bills, saving you money and stress.
               </p>
+              <!-- <p>
+                The medical industry counts on you not understanding what you
+                are being billed for and they use it against you
+              </p> -->
               <div class="hero-form" id="cta-form">
                 <div class="form-group">
                   <select type="text" class="form-control" id="cta-state">
@@ -107,8 +111,8 @@
               <div class="card-content">
                 <h3>1. Send Bills</h3>
                 <p>
-                  Send copies of your bills to our experts through our
-                  HIPAA-compliant, secure, online form.
+                  Through our HIPAA-compliant, secure, online form, our experts
+                  comb through your bills to find errors.
                 </p>
               </div>
             </div>
@@ -133,7 +137,7 @@
                 <i class="icon icon-settings"></i>
               </div>
               <div class="card-content">
-                <h3>3. Enjoy Savings</h3>
+                <h3>3. Avoid Debt</h3>
                 <p>
                   Our modest fee is 40% of what you save, earned only when we
                   save you money.
@@ -188,7 +192,7 @@
           <div class="tesimonial-section">
             <div class="container">
               <div class="row">
-                <div class="col-xl-4">
+                <div class="col-lg-4 col-xl-4">
                   <div class="testimonial-content">
                     <h2>20,000 no longer worry about their medical bills.</h2>
                     <p>
@@ -199,14 +203,15 @@
                   </div>
                 </div>
 
-                <div class="col-xl-8">
+                <div class="col-lg-8 col-xl-8">
                   <div class="masonry-with-columns">
                     <div class="testimonial-card">
                       <div class="card-content">
                         <p>
-                          Emergency visits result in the most expensive bills in
-                          healthcare. These are often over-inflated, but we have
-                          ER billing veterans for that.
+                          Advocates are experts in medical billing who know how
+                          to read health care bills and understand common costs
+                          for procedures. They can spot potential errors or
+                          overcharging and help you reduce the amount you owe.
                         </p>
                       </div>
 
@@ -223,9 +228,10 @@
                     <div class="testimonial-card">
                       <div class="card-content">
                         <p>
-                          Emergency visits result in the most expensive bills in
-                          healthcare. These are often over-inflated, but we have
-                          ER billing veterans for that.
+                          For medical bills in collections, know that debt
+                          collectors generally buy debts for pennies on the
+                          dollar. That gives you some good leverage to
+                          negotiate.
                         </p>
                       </div>
 
@@ -293,7 +299,7 @@
       </div>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-8">
+          <div class="col-lg-8 margin-auto">
             <div class="section-title text-center">
               <h2>Simple Pricing</h2>
               <p style="color: #f8f8f8;">
@@ -322,8 +328,8 @@
     <section>
       <div class="footer-newsletter-section">
         <div class="row justify-content-center">
-          <div class="col-lg-10 col-xl-8">
-            <div class="footer-newsletter-content">
+          <div class="col-lg-10 col-xl-8 margin-auto">
+            <div class="footer-newsletter-content margin-auto">
               <h2>We will never share your data</h2>
               <p>
                 The only group that will ever have access to your data is us and

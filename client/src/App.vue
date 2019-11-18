@@ -54,8 +54,8 @@
               </div>
               <div class="footer-text">
                 <p>
-                  We at DaviHealth envision a world where people focus on what's
-                  important their health, not their stressful medical bills.
+                  We at Davi Health envision a world where people focus on their
+                  health, not their stressful medical bills.
                 </p>
               </div>
             </div>

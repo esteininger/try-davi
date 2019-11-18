@@ -348,6 +348,7 @@ a {
 }
 
 .hero-content {
+  padding-left: 2rem;
   text-align: left;
 }
 
@@ -1714,6 +1715,10 @@ a {
 .footer-social-list li a {
   color: #000;
   font-size: 18px;
+}
+
+.footer-list {
+  padding-left: 0;
 }
 
 .footer-list li a {

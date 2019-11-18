@@ -6,31 +6,33 @@
         <v-form>
           <v-container class="mt-12 mb-12">
             <v-row>
-              <v-col cols="12" md="4">
+              <v-col cols="12" md="4" class="mx-auto">
                 <v-text-field
                   v-model="firstname"
                   :rules="nameRules"
-                  :counter="10"
-                  label="First name"
+                  :counter="20"
+                  label="Name"
                   required
                 ></v-text-field>
               </v-col>
-
-              <v-col cols="12" md="4">
-                <v-text-field
-                  v-model="lastname"
-                  :rules="nameRules"
-                  :counter="10"
-                  label="Last name"
-                  required
-                ></v-text-field>
-              </v-col>
-
-              <v-col cols="12" md="4">
+            </v-row>
+            <v-row>
+              <v-col cols="12" md="4" class="mx-auto">
                 <v-text-field
                   v-model="email"
                   :rules="emailRules"
                   label="E-mail"
+                  required
+                ></v-text-field>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" md="4" class="mx-auto">
+                <v-text-field
+                  v-model="phonenumber"
+                  :rules="nameRules"
+                  :counter="20"
+                  label="Phone Number"
                   required
                 ></v-text-field>
               </v-col>
@@ -82,7 +84,7 @@
           </v-row>
         </v-container>
       </tab-content>
-      <tab-content title="How do you feel?">
+      <!-- <tab-content title="How do you feel?">
         <h1 class="mb-12">
           How confident are you about your healthcare financial standing?
         </h1>
@@ -98,11 +100,8 @@
             tick-size="4"
           ></v-slider>
         </v-container>
-      </tab-content>
-      <tab-content
-        v-if="billing === 'Yes, I have received my bill.'"
-        title="Upload Docs"
-      >
+      </tab-content> -->
+      <tab-content title="Upload Docs">
         <h1>Upload your EOB document here</h1>
         <br />
         <vue-dropzone
@@ -120,14 +119,13 @@
           :options="dropzone2Options"
         ></vue-dropzone>
         <br />
-        <v-btn @click="removeAllFiles" large color="primary"
+        <!-- <v-btn @click="removeAllFiles" large color="primary"
           >Remove All Files</v-btn
-        >
+        > -->
         <v-btn @click="uploadEOB" large color="primary">Upload EOB</v-btn>
         <v-btn @click="uploadBill" large color="primary">Upload BILL</v-btn>
         <br />
         <br />
-        <VueCamera />
       </tab-content>
     </form-wizard>
   </div>
@@ -136,7 +134,6 @@
 <script>
 import vue2Dropzone from "vue2-dropzone";
 import "vue2-dropzone/dist/vue2Dropzone.min.css";
-import VueCamera from "@mrjeffapp/vuejs-camera";
 import { FormWizard, TabContent } from "vue-form-wizard";
 import "vue-form-wizard/dist/vue-form-wizard.min.css";
 import axios from "axios";
@@ -145,7 +142,6 @@ export default {
   name: "upload",
   components: {
     vueDropzone: vue2Dropzone,
-    VueCamera: VueCamera,
     FormWizard,
     TabContent
   },
@@ -195,8 +191,8 @@ export default {
       files: {
         file_type: "EOB" //EOB or Bill
       },
-      lastname: "Last Name",
-      firstname: "First Name",
+      phonenumber: "Phone Number",
+      firstname: "Full Name",
       email: "Email",
       nameRules: [
         v => !!v || "Name is required",

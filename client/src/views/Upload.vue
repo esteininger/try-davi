@@ -40,67 +40,6 @@
           </v-container>
         </v-form>
       </tab-content>
-      <tab-content title="Journey Info">
-        <v-container fluid>
-          <v-row align="center">
-            <h3>My billing status</h3>
-            <v-col class="d-flex" cols="12" sm="6">
-              <v-select
-                v-model="billing"
-                :items="options_billing"
-                label="Billing"
-              ></v-select>
-            </v-col>
-          </v-row>
-          <v-row align="center">
-            <h3>My insurance is provided by</h3>
-            <v-col class="d-flex" cols="12" sm="6">
-              <v-select
-                v-model="carrier"
-                :items="options_carrier"
-                label="Carrier"
-              ></v-select>
-            </v-col>
-          </v-row>
-          <v-row align="center">
-            <h3>and the type of plan is</h3>
-            <v-col class="d-flex" cols="12" sm="6">
-              <v-select
-                v-model="plan"
-                :items="options_plan"
-                label="Plan"
-              ></v-select>
-            </v-col>
-          </v-row>
-          <v-row align="center">
-            <h3>With an income of</h3>
-            <v-col class="d-flex" cols="12" sm="6">
-              <v-select
-                v-model="income"
-                :items="options_income"
-                label="Income"
-              ></v-select>
-            </v-col>
-          </v-row>
-        </v-container>
-      </tab-content>
-      <!-- <tab-content title="How do you feel?">
-        <h1 class="mb-12">
-          How confident are you about your healthcare financial standing?
-        </h1>
-
-        <v-container fluid class="mb-12">
-          <v-slider
-            v-model="energy_level"
-            :tick-labels="labels_energy"
-            :max="10"
-            thumb-label="always"
-            step="1"
-            ticks="always"
-            tick-size="4"
-          ></v-slider>
-        </v-container>
-      </tab-content> -->
       <tab-content title="Upload Docs">
         <h1>Upload your EOB document here</h1>
         <br />

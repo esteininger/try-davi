@@ -603,7 +603,7 @@ a {
 
 @media (min-width: 992px) {
   .section-title {
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
   }
 }
 
@@ -1068,7 +1068,7 @@ a {
 .pricing-section {
   padding-top: 45px;
   padding-bottom: 68px;
-  background-color: #30393b;
+  background-color: #eef4f5;
   position: relative;
 }
 
@@ -1081,16 +1081,17 @@ a {
   transform: translateY(-85%);
 }
 
-.pricing-section .section-title {
+/* .pricing-section .section-title {
   padding-bottom: 0px;
-}
+} */
 
 .pricing-section .section-title h2 {
-  color: #fff;
+  color: #2c3e50;
 }
 
 .pricing-section .section-title p {
-  color: #878b90;
+  color: #2c3e50;
+  padding: 2rem 10rem;
 }
 
 @media (min-width: 992px) {
@@ -1099,7 +1100,7 @@ a {
     padding-bottom: 80px;
   }
   .pricing-section .section-title {
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
   }
 }
 

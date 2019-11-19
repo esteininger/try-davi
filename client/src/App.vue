@@ -19,14 +19,6 @@
           >
             <div class="main-navigation">
               <ul class="main-menu">
-                <!-- <li class="menu-item">
-                  <a href="#how-it-works">How it Works</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#who-its-for">Who it's For</a>
-                </li>
-                <li class="menu-item"><a href="#pricing">Pricing</a></li> -->
-
                 <li class="menu-item">
                   <router-link to="/" v-scroll-to="'#how-it-works'"
                     >How it Works</router-link
@@ -82,13 +74,21 @@
                 <h6>Navigate</h6>
               </div>
               <ul class="footer-list">
-                <li>
-                  <router-link to="/">How it Works</router-link>
+                <li class="menu-item">
+                  <router-link to="/" v-scroll-to="'#how-it-works'"
+                    >How it Works</router-link
+                  >
                 </li>
-                <li>
-                  <router-link to="/">Who it's For</router-link>
+                <li class="menu-item">
+                  <router-link to="/" v-scroll-to="'#who-its-for'"
+                    >Who it's For</router-link
+                  >
                 </li>
-                <li><router-link to="/">Pricing</router-link></li>
+                <li class="menu-item">
+                  <router-link to="/" v-scroll-to="'#pricing'"
+                    >Pricing</router-link
+                  >
+                </li>
               </ul>
             </div>
           </div>

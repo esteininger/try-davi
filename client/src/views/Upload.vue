@@ -45,12 +45,13 @@
         <br />
         <vue-dropzone
           v-on:vdropzone-success="setBill"
-          ref="myVueDropzone2"
-          id="dropzone2"
+          v-on:vdropzone-complete="uploadBill"
+          ref="myVueDropzone"
+          id="dropzone"
           :options="dropzone2Options"
         ></vue-dropzone>
         <br />
-        <v-btn @click="uploadBill" large color="primary">Upload BILL</v-btn>
+        <!-- <v-btn @click="uploadBill" large color="primary">Upload BILL</v-btn> -->
         <br />
         <br />
       </tab-content>
@@ -130,15 +131,7 @@ export default {
   },
   methods: {
     onComplete: function() {
-      this.$router.push("matching");
-    },
-    removeAllFiles() {
-      this.$refs.myVueDropzone.removeAllFiles();
-      this.$refs.myVueDropzone2.removeAllFiles();
-    },
-    getAcceptedFiles() {
-      this.$refs.myVueDropzone.getAcceptedFiles();
-      this.$refs.myVueDropzone2.getAcceptedFiles();
+      this.$router.push("complete");
     },
     setBill(file, response) {
       this.bill = file;

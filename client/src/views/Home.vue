@@ -5,12 +5,12 @@
     <section class="hero-area">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-5 order-lg-2">
+          <div class="col-lg-3 order-lg-2">
             <div class="hero-image">
               <img src="@/assets/updated.svg" alt="" />
             </div>
           </div>
-          <div class="col-lg-7 order-lg-1">
+          <div class="col-lg-5 order-lg-1">
             <div class="hero-content">
               <h1>Remove the stress from your medical bills</h1>
               <p>
@@ -249,7 +249,7 @@
           <div class="col-lg-8 margin-auto">
             <div class="section-title text-center">
               <h2>Simple Pricing</h2>
-              <p style="color: #f8f8f8;">
+              <p>
                 Our modest fee is
                 <span class="highlight">40% of your savings</span>, earned only
                 when we do our job effectively. Davi lowers your bill or there
@@ -305,4 +305,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.justify-content-center {
+  justify-content: center;
+}
+</style>

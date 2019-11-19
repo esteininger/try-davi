@@ -5,7 +5,7 @@
     <img src="../assets/undraw_getting_coffee_wntr.svg" alt />
     <ol>
       <br />
-      <li>Myrna will be in touch with you within 24 hours.</li>
+      <li>An advocate will be in touch shortly.</li>
       <br />
       <img src="../assets/undraw_business_deal_cpi9.svg" alt />
       <br />
@@ -24,8 +24,6 @@ export default {};
 
 <style lang="scss" scoped>
 .complete {
-  h1 {
-  }
   ol {
     width: 36%;
     margin: auto;

@@ -11,35 +11,41 @@
                 <img :src="require(`@/assets/${expert.pic}`)" :key="id" />
               </v-list-item-avatar>
               <v-list-item-content>
-                <v-list-item-title class="headline">{{expert.name}}</v-list-item-title>
-                <v-list-item-subtitle>{{expert.company}}</v-list-item-subtitle>
+                <v-list-item-title class="headline">{{
+                  expert.name
+                }}</v-list-item-title>
+                <v-list-item-subtitle>{{
+                  expert.company
+                }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
-
-            <!-- <v-img src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg" height="194"></v-img> -->
-
-            <v-card-text>A heart attack can be overwhelming for you and your family. I bring professional and personal experience to help you discover your blindspots, understand your options, gain confidence and save you time.</v-card-text>
+            <v-card-text
+              >A heart attack can be overwhelming for you and your family. I
+              bring professional and personal experience to help you discover
+              your blindspots, understand your options, gain confidence and save
+              you time.</v-card-text
+            >
 
             <div class="more-info">
               <div>
                 <h4>Location:</h4>
-                <p>{{expert.loc}}</p>
+                <p>{{ expert.loc }}</p>
               </div>
               <div>
                 <h4>Telephone:</h4>
-                <p>{{expert.tel}}</p>
+                <p>{{ expert.tel }}</p>
               </div>
               <div>
                 <h4>Website:</h4>
-                <p>{{expert.site}}</p>
+                <p>{{ expert.site }}</p>
               </div>
               <div>
                 <h4>Email:</h4>
-                <p>{{expert.email}}</p>
+                <p>{{ expert.email }}</p>
               </div>
               <div>
                 <h4>Rating:</h4>
-                <p>{{expert.rating}}</p>
+                <p>{{ expert.rating }}</p>
               </div>
             </div>
           </v-card>

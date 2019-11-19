@@ -11,6 +11,7 @@ class Files(db.EmbeddedDocument):
 class Patient(db.Document):
     uuid = db.StringField(required=True)
     name = db.StringField()
+
     files = db.EmbeddedDocumentField(Files)
 
     meta = {'collection': 'patients', 'strict': False}

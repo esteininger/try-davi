@@ -2,7 +2,7 @@
 import re
 import unidecode
 from config import secret_key
-# from Crypto.Cipher import XOR
+from Crypto.Cipher import XOR
 import base64
 from functools import wraps
 
@@ -53,10 +53,10 @@ def slugify(text):
 
 
 def encode(plaintext):
-    # cipher = XOR.new(secret_key)
+    cipher = XOR.new(secret_key)
     return base64.b64encode(cipher.encrypt(plaintext))
 
 
 def decode(encoded_text):
-    # cipher = XOR.new(secret_key)
+    cipher = XOR.new(secret_key)
     return cipher.decrypt(base64.b64decode(encoded_text)).decode("utf-8")

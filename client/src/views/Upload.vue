@@ -8,7 +8,7 @@
             <v-row>
               <v-col cols="12" md="4" class="mx-auto">
                 <v-text-field
-                  v-model="firstname"
+                  v-model="fullname"
                   :rules="nameRules"
                   :counter="20"
                   label="Name"
@@ -40,15 +40,7 @@
           </v-container>
         </v-form>
       </tab-content>
-      <tab-content title="Upload Docs">
-        <h1>Upload your EOB document here</h1>
-        <br />
-        <vue-dropzone
-          v-on:vdropzone-success="setEOB"
-          ref="myVueDropzone"
-          id="dropzone"
-          :options="dropzoneOptions"
-        ></vue-dropzone>
+      <tab-content title="Upload Bill">
         <h1>Upload your Medical Bill here</h1>
         <br />
         <vue-dropzone
@@ -58,10 +50,6 @@
           :options="dropzone2Options"
         ></vue-dropzone>
         <br />
-        <!-- <v-btn @click="removeAllFiles" large color="primary"
-          >Remove All Files</v-btn
-        > -->
-        <v-btn @click="uploadEOB" large color="primary">Upload EOB</v-btn>
         <v-btn @click="uploadBill" large color="primary">Upload BILL</v-btn>
         <br />
         <br />
@@ -87,7 +75,6 @@ export default {
   data: function() {
     return {
       bill: null,
-      eob: null,
       dropzoneOptions: {
         url: "https://httpbin.org/post",
         thumbnailWidth: 150,
@@ -117,69 +104,20 @@ export default {
         // thumbnailHeight: 150,
         // addRemoveLinks: true
       },
-      form: {
-        first: "first", //Andrew
-        last: "last", //Kim
-        email: "email", //example@test.com
-        insurance: "Aetna", //provider
-        financial: "Savings",
-        billing: "Pre/Post", //used to show upload steps,
-        mood: "Sad",
-        hospital_name: "Langone Center NYU"
-      },
       files: {
         file_type: "EOB" //EOB or Bill
       },
       phonenumber: "Phone Number",
-      firstname: "Full Name",
+      fullname: "First & Last",
       email: "Email",
       nameRules: [
         v => !!v || "Name is required",
-        v => v.length <= 10 || "Name must be less than 10 characters"
+        v => v.length <= 20 || "Name must be less than 20 characters"
       ],
       emailRules: [
         v => !!v || "E-mail is required",
         v => /.+@.+/.test(v) || "E-mail must be valid"
       ],
-      billing: "",
-      carrier: "",
-      plan: "",
-      income: "",
-      options_carrier: [
-        { text: "Un-insured", value: "un-insured" },
-        { text: "COBRA", value: "COBRA" },
-        { text: "Medicare", value: "Medicare" },
-        { text: "Unitedhealth", value: "Unitedhealth" },
-        { text: "Wellpoint", value: "Wellpoint" },
-        { text: "Kaiser", value: "Kaiser" },
-        { text: "Humana", value: "Humana" },
-        { text: "Aetna", value: "Aetna" },
-        { text: "BlueCross", value: "Bluecross" },
-        { text: "Cigna", value: "Cigna" },
-        { text: "Highmark", value: "Highmark" }
-      ],
-      options_income: [
-        "$0 to $9,525",
-        "$9,526 to $38,700",
-        "$38,701 to $82,500",
-        "$82,501 to $157,500",
-        "$157,501 to $200,000",
-        "$200,001 to $500,000",
-        "$500,001 or more"
-      ],
-      options_billing: [
-        "Yes, I have received my bill.",
-        "No, I have not received my bill."
-      ],
-      options_plan: [
-        "Medicare",
-        "Advantage",
-        "BlueCross BlueShield of California - Medicare",
-        "Amerigroup - Medicare"
-      ],
-      labels_energy: ["Low", "", "", "", "", "", "", "", "", "", "High"],
-      energy_level: 5,
-      pleasant_level: 5,
       axiosConfig: {
         headers: {
           "cache-control": "no-cache",
@@ -189,9 +127,6 @@ export default {
         processData: false
       }
     };
-  },
-  created: function() {
-    // this.postAxios();
   },
   methods: {
     onComplete: function() {
@@ -209,31 +144,14 @@ export default {
       this.bill = file;
       console.log(file, response);
     },
-    setEOB(file, response) {
-      this.eob = file;
-      console.log(file, response);
-    },
-    uploadEOB() {
-      var form = new FormData();
-      form.append("file", this.eob);
-
-      axios
-        .post(
-          "https://trydavi.com/api/drive/upload/eob",
-          form,
-          this.axiosConfig
-        )
-        .then(function(response) {
-          console.log(response);
-          return response;
-        })
-        .catch(function(error) {
-          console.log(error);
-          return error;
-        })
-        .finally(function() {
-          // always executed
-        });
+    sendPatientInfo() {
+      const patientInfo = {
+        patientUUID: this.patientUUID,
+        fullname: this.fullname,
+        email: this.email,
+        phonenumber: this.phonenumber
+      };
+      return patientInfo;
     },
     uploadBill() {
       var form = new FormData();

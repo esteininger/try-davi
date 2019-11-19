@@ -156,8 +156,8 @@
                       <div class="card-content">
                         <p>
                           Advocates are experts in medical billing who know how
-                          to read health care bills and understand common costs
-                          for procedures. They can spot potential errors or
+                          to read medical bills and understand common costs for
+                          procedures. They can spot potential errors or
                           overcharging and help you reduce the amount you owe.
                         </p>
                       </div>
